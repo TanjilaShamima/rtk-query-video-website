@@ -18,7 +18,7 @@ const VideoDescription = ({ video }: Props) => {
         <div className="flex gap-6 w-full justify-end">
           <div className="flex gap-1">
             <div className="shrink-0">
-              <img className="w-5 block" src="assets/edit.svg" alt="Edit" />
+              <img className="w-5 block" src="/assets/edit.svg" alt="Edit" />
             </div>
             <Link to="/videos/edit/1">
               <span className="text-sm leading-[1.7142857] text-slate-600 cursor-pointer">
