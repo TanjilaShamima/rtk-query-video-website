@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 
-interface Props {}
+interface Props {
+  video: any;
+}
 
-const VideoDescription = () => {
+const VideoDescription = ({ video }: Props) => {
   return (
     <div>
       <h1 className="text-lg font-semibold tracking-tight text-slate-800">
-        Some video title
+        {video.title}
       </h1>
       <div className="pb-4 flex items-center space-between border-b gap-4">
         <h2 className="text-sm leading-[1.7142857] text-slate-600 w-full">
-          Uploaded on 23 Nov 2022
+          Uploaded on {new Date(video.date).toDateString()}
         </h2>
 
         <div className="flex gap-6 w-full justify-end">
@@ -40,10 +42,7 @@ const VideoDescription = () => {
       </div>
 
       <div className="mt-4 text-sm text-[#334155] dark:text-slate-400">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, ex.
-        Facilis excepturi ratione magnam quia maiores architecto eaque fugiat
-        sit quos ex quod quam praesentium optio eligendi, laborum cupiditate.
-        Quidem.
+        {video.description}
       </div>
     </div>
   );

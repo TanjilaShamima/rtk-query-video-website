@@ -4,16 +4,16 @@ interface Props {
   video: any;
 }
 
-const Video = ({video}: Props) => {
+const Video = ({ video }: Props) => {
   return (
     <div className="col-span-12 sm:col-span-6 md:col-span-3 duration-300 hover:scale-[1.03]">
       <div className="w-full flex flex-col">
         <div className="relative">
           <Link to="/videos/1">
             <img
-              src="https://i3.ytimg.com/vi/6O4s7v28nlw/maxresdefault.jpg"
+              src={video.thumbnail}
               className="w-full h-auto"
-              alt="Some video title"
+              alt={video.title}
             />
           </Link>
 
@@ -24,21 +24,21 @@ const Video = ({video}: Props) => {
 
         <div className="flex flex-row mt-2 gap-2">
           <img
-            src="/assets/author.png"
+            src={video.avatar}
             className="rounded-full h-6 w-6 shrink-0"
-            alt="Learn with Sumit"
+            alt={video.title}
           />
 
           <div className="flex flex-col">
             <Link to="/videos/1">
               <p className="text-slate-900 text-sm font-semibold">
-                Video title
+                {video.title}
               </p>
             </Link>
             <span className="text-gray-400 text-xs hover:text-gray-600">
-              Learn with Sumit
+              {video.description}
             </span>
-            <p className="text-gray-400 text-xs">200 views . May 3, 2022</p>
+            <p className="text-gray-400 text-xs">{video.views} views . {new Date(video.date).toDateString()}</p>
           </div>
         </div>
       </div>
