@@ -36,7 +36,7 @@ const Video = ({ video }: Props) => {
               </p>
             </Link>
             <span className="text-gray-400 text-xs hover:text-gray-600">
-              {video.description}
+              {video.author}
             </span>
             <p className="text-gray-400 text-xs">{video.views} views . {new Date(video.date).toDateString()}</p>
           </div>

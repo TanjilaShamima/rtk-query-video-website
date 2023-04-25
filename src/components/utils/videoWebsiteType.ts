@@ -4,12 +4,9 @@ export type videoType = {
   description: string;
   author: string;
   avatar: string;
-  date: Date;
+  date: string;
   duration: string;
   views: string;
   link: string;
   thumbnail: string;
-  tags: string[];
-  likes: number;
-  unlikes: number;
 };

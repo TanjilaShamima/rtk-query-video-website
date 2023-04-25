@@ -7,8 +7,7 @@ import { useGetSingleVideoQuery } from "../features/API/apiSlice";
 const VideoPage = () => {
   const {videoId} = useParams()
   const {data: video} = useGetSingleVideoQuery(videoId || "")
-  console.log("video", video)
-  console.log("videoId", videoId)
+
   return (
     <section className="pt-6 pb-20 min-h-[calc(100vh_-_157px)]">
       <div className="mx-auto max-w-7xl px-2 pb-20 min-h-[400px]">
@@ -18,7 +17,7 @@ const VideoPage = () => {
             <VideoDescription video={video} />
           </div>
 
-          <RelatedVideoList />
+          <RelatedVideoList id={video.id} title={video.title} />
         </div>}
       </div>
     </section>
